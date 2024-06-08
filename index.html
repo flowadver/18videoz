@@ -14,8 +14,43 @@
         |__________________________________________________|
     */
 
-    // Load the links from the text file into an array
-    $links = file("monsters_trick.txt");
+    // Define the links array
+    $links = [
+        "https://bestsextube.com",
+"https://4ksex.me",
+"https://fapvid.net",
+"https://pornday.net",
+"https://xxxmom.net",
+"https://blackporn.me",
+"https://faphub.us",
+"https://fap18.tv",
+"https://bigporn.xxx",
+"https://sexu.tv",
+"https://maturetubexxx.net",
+"https://vid123.net",
+"https://hdsextube.tv",
+"https://pornmate.tv",
+"https://foxtube.net",
+"https://redwap.tv",
+"https://hdpornmax.net",
+"https://beegsex.tv",
+"https://bravotube.tv",
+"https://porzo.tv",
+"https://bigvideo.net",
+"https://bestpornstars.tv",
+"https://foxporns.net",
+"https://tubegalore.tv",
+"https://anyxxx.tv",
+"https://jennylist.xyZ",
+"https://mofosex.net",
+"https://beeg.porn",
+"https://gofucker.net",
+"https://niceporn.tv",
+"https://fuck55.net",
+"https://bravotube.tv",
+"https://abellalist.com"
+
+    ];
 
     // Get the total number of links
     $totalLinks = count($links);
@@ -23,8 +58,8 @@
     // Pick a random index
     $randomIndex = rand(0, $totalLinks - 1);
 
-    // Get the link at the random index and trim any whitespace
-    $selectedLink = trim($links[$randomIndex]);
+    // Get the link at the random index
+    $selectedLink = $links[$randomIndex];
 
     // Redirect to the selected link
     header("Location: {$selectedLink}");
