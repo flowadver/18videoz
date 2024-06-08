@@ -4,66 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rotating Link</title>
+    <style>
+        #rotating-link {
+            display: inline-block;
+            font-size: 20px;
+            text-decoration: none;
+            color: blue;
+            margin: 20px;
+        }
+    </style>
 </head>
 <body>
-    <?php
-    /*   __________________________________________________
-        |  Script by Monsters Trick - Rotating Link V.2.3  |
-        |              on 2013-01-28 20:16:49              |
-        |    Join Grup: https://bit.ly/3wsOEYA             |
-        |__________________________________________________|
-    */
+    <a id="rotating-link" href="#">Initial Link</a>
 
-    // Define the links array
-    $links = [
-        "https://bestsextube.com",
-"https://4ksex.me",
-"https://fapvid.net",
-"https://pornday.net",
-"https://xxxmom.net",
-"https://blackporn.me",
-"https://faphub.us",
-"https://fap18.tv",
-"https://bigporn.xxx",
-"https://sexu.tv",
-"https://maturetubexxx.net",
-"https://vid123.net",
-"https://hdsextube.tv",
-"https://pornmate.tv",
-"https://foxtube.net",
-"https://redwap.tv",
-"https://hdpornmax.net",
-"https://beegsex.tv",
-"https://bravotube.tv",
-"https://porzo.tv",
-"https://bigvideo.net",
-"https://bestpornstars.tv",
-"https://foxporns.net",
-"https://tubegalore.tv",
-"https://anyxxx.tv",
-"https://jennylist.xyZ",
-"https://mofosex.net",
-"https://beeg.porn",
-"https://gofucker.net",
-"https://niceporn.tv",
-"https://fuck55.net",
-"https://bravotube.tv",
-"https://abellalist.com"
+    <script>
+        const links = [
+            { url: "https://www.example.com", text: "Example" },
+            { url: "https://www.google.com", text: "Google" },
+            { url: "https://www.youtube.com", text: "YouTube" },
+            { url: "https://www.facebook.com", text: "Facebook" }
+        ];
 
-    ];
+        let currentIndex = 0;
 
-    // Get the total number of links
-    $totalLinks = count($links);
+        function rotateLink() {
+            const linkElement = document.getElementById('rotating-link');
+            currentIndex = (currentIndex + 1) % links.length;
+            linkElement.href = links[currentIndex].url;
+            linkElement.textContent = links[currentIndex].text;
+        }
 
-    // Pick a random index
-    $randomIndex = rand(0, $totalLinks - 1);
-
-    // Get the link at the random index
-    $selectedLink = $links[$randomIndex];
-
-    // Redirect to the selected link
-    header("Location: {$selectedLink}");
-    exit;
-    ?>
+        setInterval(rotateLink, 3000); // Change link every 3 seconds
+    </script>
 </body>
 </html>
